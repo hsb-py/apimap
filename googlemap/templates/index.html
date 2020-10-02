@@ -3,10 +3,20 @@
 <head>
     <meta charset="utf-8">
     <title>{% block title %}googlemap{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Google-Map</h1>
-<!--    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3711.2237840236585!2d84.72939790062603!3d21.53810332799465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a21c5aa8915aa9d%3A0xd707a3a825c083d!2sMarket%20Rd%2C%20Deogarh%2C%20Odisha%20768108!5e0!3m2!1sen!2sin!4v1601360576708!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></body>-->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2337.9203546248664!2d84.72952448897425!3d21.538363682693745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a21c5aa883cbfd7%3A0xfff91628d347952!2sState%20Bank%20of%20India!5e0!3m2!1sen!2sin!4v1601362300687!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+<h1>Google-Map</h1>
+
+<form method="POST">
+    <input type="text" name=map placeholder="Input address">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29690.089116801035!2d84.71061928527973!3d21.536642056000048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a21c5031611e2dd%3A0x179bd961b9df94cb!2sDeogarh%2C%20Odisha%20768108!5e0!3m2!1sen!2sin!4v1601619429319!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+<p>{{map}}</p>
 </body>
 </html>
+
+
